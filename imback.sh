@@ -6,7 +6,7 @@ echo "Will start the image backup script in 3 seconds..."
 sleep 3
 
 # can create list.txt using
-# sudo lvs | grep ao | awk {'print "/dev/" $2 "/" $1'} > /tmp/list.txt
+# sudo lvs | grep ao | awk {'print "/dev/" $2 "/" $1'} > ./list.txt
 if [ ! -f ./list.txt ]; then
     echo "input file missing, exiting"
     exit
