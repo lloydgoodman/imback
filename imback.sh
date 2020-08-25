@@ -34,6 +34,7 @@ do
         echo "Creating the snapshot using - lvcreate -s -L 1G -n $thesnapshot $wholepath"
         # KEY PART <-------------
         lvcreate -s -L 1G -n $thesnapshot $wholepath
+        # KEY PART <-------------
         if [ $? -ne 0 ]
         then
                 echo "snapshot creation failed, exiting"
@@ -53,6 +54,7 @@ do
         echo "Creating the image using the command - dd if=$snapFullPath of=$theimage conv=excl"
         # KEY PART <---------------
         dd if=$snapFullPath of=$theimage conv=excl
+        # KEY PART <-------------
         if [ $? -ne 0 ]
         then
                 echo "image creation failed, exiting"
@@ -87,6 +89,7 @@ do
         # KEY PART <--------------
         #lvremove -y $snapFullPath
         lvremove $snapFullPath
+        # KEY PART <-------------
         if [ $? -ne 0 ]
         then
                 echo "snapshot delete failed, exiting"
